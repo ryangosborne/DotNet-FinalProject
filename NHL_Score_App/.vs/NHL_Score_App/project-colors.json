@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "d1f762fc-c201-40e2-b97c-5ff87b9166de": {
+      "ProjectGuid": "d1f762fc-c201-40e2-b97c-5ff87b9166de",
+      "DisplayName": "NHL_Score_App",
+      "ColorIndex": 0
+    }
+  },
+  "NextColorIndex": 1
+}
