@@ -27,5 +27,10 @@ namespace NHL_Score_App
             this.InitializeComponent();
             this.GameVM = new GameViewModel();
         }
+
+        private void AboutDetails_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(About));
+        }
     }
 }

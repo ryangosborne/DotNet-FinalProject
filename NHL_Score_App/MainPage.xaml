@@ -13,7 +13,7 @@
     <Page.DataContext>
         <viewmodels:GameViewModel/>
     </Page.DataContext>
-    
+
     <Page.Resources>
 
         <Style TargetType="Grid">
@@ -24,7 +24,6 @@
         <Style TargetType="TextBlock">
             <Setter Property="FontSize" Value="24"/>
         </Style>
-
 
         <!--Data for Note Preview in Sidebar-->
         <CollectionViewSource x:Name="GameCollection"
@@ -37,6 +36,18 @@
             </StackPanel>
         </DataTemplate>
     </Page.Resources>
+
+    <Page.TopAppBar>
+
+        <CommandBar>
+            <!--Secondary/Hidden Commands-->
+            <CommandBar.SecondaryCommands>
+                <AppBarButton x:Name="AboutDetails" Label="About" ToolTipService.ToolTip="Developer and App Details" Click="AboutDetails_Click"></AppBarButton>
+            </CommandBar.SecondaryCommands>
+        </CommandBar>
+        
+        
+    </Page.TopAppBar>
 
     <Grid>
         <Grid.RowDefinitions>
