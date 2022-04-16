@@ -70,5 +70,25 @@
                 
             </ListView>
         </ScrollViewer>
+        
+        <!-- GAME INFORMATION -->
+        
+        <!-- SCORES AND SHOTS -->
+        <StackPanel Grid.Row="2" Grid.Column="1" Margin="10, 90, 10, 240" Background="DarkGray" CornerRadius="100">
+            
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Spacing="100" Margin="40">
+                <TextBlock x:Name="visitor_score_text" Text="5" FontSize="48"></TextBlock>
+                <TextBlock x:Name="game_status_text" Text="Final" FontSize="48"></TextBlock>
+                <TextBlock x:Name="home_score_text" Text="2" FontSize="48"></TextBlock>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Spacing="40" Margin="20">
+                <TextBlock x:Name="visitor_shots_text" Text="38" FontSize="43"></TextBlock>
+                <TextBlock Text="Shots" FontSize="43"></TextBlock>
+                <TextBlock x:Name="home_shots_text" Text="31" FontSize="43"></TextBlock>
+            </StackPanel>
+
+        </StackPanel>
+        
     </Grid>
 </Page>
