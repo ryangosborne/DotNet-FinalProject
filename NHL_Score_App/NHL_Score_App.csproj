@@ -131,7 +131,6 @@
     <Compile Include="Models\GameModel.cs" />
     <Compile Include="Models\GoalsModel.cs" />
     <Compile Include="Models\PlayerModel.cs" />
-    <Compile Include="Models\TeamEnum.cs" />
     <Compile Include="Models\TeamModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\GameViewModel.cs" />
