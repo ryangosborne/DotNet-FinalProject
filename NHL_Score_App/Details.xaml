@@ -1,0 +1,37 @@
+﻿<Page
+    x:Class="NHL_Score_App.Details"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:NHL_Score_App"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Page.Resources>
+        <Style TargetType="TextBlock">
+            <Setter Property="FontSize" Value="18"/>
+            <Setter Property="Margin" Value="30, 10, 30, 0"/>
+        </Style>
+    </Page.Resources>
+
+    <StackPanel Background="LightGray" VerticalAlignment="Center"  HorizontalAlignment="Center" Margin="12,12,12,0">
+
+        <TextBlock Text="NHL Results, Stats and More" FontSize="28">
+        </TextBlock>
+
+        <TextBlock FontSize="18" TextWrapping="Wrap"
+            Text="For a complete listing of current NHL standings please visit">
+        </TextBlock>
+        <HyperlinkButton Margin="30, 10, 30, 0" Content="nhl.com/standings"
+            NavigateUri="https://www.nhl.com/standings/2021/division">
+        </HyperlinkButton>
+
+        <TextBlock FontSize="18" TextWrapping="Wrap"
+            Text="For more comprehensive player statistics please visit">
+        </TextBlock>
+        <HyperlinkButton Margin="30, 10, 30, 0" Content="hockeydb.com"
+            NavigateUri="https://www.hockeydb.com/">
+        </HyperlinkButton>
+    </StackPanel>
+</Page>
