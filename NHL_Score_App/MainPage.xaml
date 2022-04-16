@@ -52,7 +52,7 @@
 
         <ScrollViewer HorizontalScrollMode="Enabled" VerticalScrollMode="Disabled" HorizontalScrollBarVisibility="Visible" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="3">
             <ListView x:Name="LastNightsGames"
-                      ItemsSource="{Binding Source={StaticResource GamesCollection}}"
+                      ItemsSource="{Binding Source={StaticResource GameCollection}}"
                       ItemTemplate="{Binding Source={StaticResource GameTemplate}}">
                 
             </ListView>
