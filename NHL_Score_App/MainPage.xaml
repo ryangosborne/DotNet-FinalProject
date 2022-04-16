@@ -27,11 +27,11 @@
 
 
         <!--Data for Note Preview in Sidebar-->
-        <!--<CollectionViewSource x:Name="GameCollection"
+        <CollectionViewSource x:Name="GameCollection"
                               Source="{x:Bind GameVM.Games}">
-        </CollectionViewSource>-->
+        </CollectionViewSource>
 
-        <DataTemplate x:Name="NoteTemplate">
+        <DataTemplate x:Name="GameTemplate" x:DataType="models:GameModel">
             <StackPanel Orientation="Horizontal" Margin="5">
                 <TextBlock>test</TextBlock>
             </StackPanel>
@@ -51,11 +51,11 @@
         </Grid.ColumnDefinitions>
 
         <ScrollViewer HorizontalScrollMode="Enabled" VerticalScrollMode="Disabled" HorizontalScrollBarVisibility="Visible" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="3">
-            <!--<ListView x:Name="LastNightsGames"
+            <ListView x:Name="LastNightsGames"
                       ItemsSource="{Binding Source={StaticResource GamesCollection}}"
                       ItemsTemplate="{Binding Source={StaticResource GameTemplate}}">
                 
-            </ListView>-->
+            </ListView>
         </ScrollViewer>
     </Grid>
 </Page>
