@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ryang\\source\\repos\\DotNet-FinalProject\\NHL_Score_App\\NHL_Score_App.csproj": {}
+    "C:\\Users\\apollo\\Documents\\School\\PROG2500\\assignments\\final\\NHL_Score_App\\NHL_Score_App.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ryang\\source\\repos\\DotNet-FinalProject\\NHL_Score_App\\NHL_Score_App.csproj": {
+    "C:\\Users\\apollo\\Documents\\School\\PROG2500\\assignments\\final\\NHL_Score_App\\NHL_Score_App.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ryang\\source\\repos\\DotNet-FinalProject\\NHL_Score_App\\NHL_Score_App.csproj",
+        "projectUniqueName": "C:\\Users\\apollo\\Documents\\School\\PROG2500\\assignments\\final\\NHL_Score_App\\NHL_Score_App.csproj",
         "projectName": "NHL_Score_App",
-        "projectPath": "C:\\Users\\ryang\\source\\repos\\DotNet-FinalProject\\NHL_Score_App\\NHL_Score_App.csproj",
-        "packagesPath": "C:\\Users\\ryang\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ryang\\source\\repos\\DotNet-FinalProject\\NHL_Score_App\\obj\\",
+        "projectPath": "C:\\Users\\apollo\\Documents\\School\\PROG2500\\assignments\\final\\NHL_Score_App\\NHL_Score_App.csproj",
+        "packagesPath": "C:\\Users\\apollo\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\apollo\\Documents\\School\\PROG2500\\assignments\\final\\NHL_Score_App\\obj\\",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
         "fallbackFolders": [
@@ -19,7 +19,7 @@
           "C:\\Program Files (x86)\\Microsoft SDKs\\UWPNuGetPackages\\"
         ],
         "configFilePaths": [
-          "C:\\Users\\ryang\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\apollo\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
