@@ -5,6 +5,7 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI.Core;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -17,11 +18,26 @@ using Windows.UI.Xaml.Navigation;
 
 namespace NHL_Score_App
 {
-    public sealed partial class About : UserControl
+    public sealed partial class About : Page
     {
         public About()
         {
             this.InitializeComponent();
+        }
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            SystemNavigationManager.GetForCurrentView().AppViewBackButtonVisibility = AppViewBackButtonVisibility.Visible;
+            SystemNavigationManager.GetForCurrentView().BackRequested += OnBackRequested;
+            base.OnNavigatedTo(e);
+        }
+
+        private void OnBackRequested(object sender, BackRequestedEventArgs backRequestedEventArgs)
+        {
+            if (Frame.CanGoBack)
+            {
+                Frame.GoBack();
+            }
+            backRequestedEventArgs.Handled = true;
         }
     }
 }
