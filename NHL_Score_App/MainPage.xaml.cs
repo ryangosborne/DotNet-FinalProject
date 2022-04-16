@@ -32,5 +32,10 @@ namespace NHL_Score_App
         {
             Frame.Navigate(typeof(About));
         }
+
+        private void ExtraDetails_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(Details));
+        }
     }
 }

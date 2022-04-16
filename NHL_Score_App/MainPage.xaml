@@ -43,6 +43,7 @@
             <!--Secondary/Hidden Commands-->
             <CommandBar.SecondaryCommands>
                 <AppBarButton x:Name="AboutDetails" Label="About" ToolTipService.ToolTip="Developer and App Details" Click="AboutDetails_Click"></AppBarButton>
+                <AppBarButton x:Name="ExtraDetails" Label="More Stats" ToolTipService.ToolTip="Resources to more NHL Stats" Click="ExtraDetails_Click"></AppBarButton>
             </CommandBar.SecondaryCommands>
         </CommandBar>
         
