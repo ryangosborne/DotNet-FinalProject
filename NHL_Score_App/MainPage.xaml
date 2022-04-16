@@ -50,10 +50,23 @@
             <ColumnDefinition Width="120*"/>
         </Grid.ColumnDefinitions>
 
+        <!--Search Bar-->
+        <TextBox x:Name="FilterTextbox"
+                 PlaceholderText="Search..."
+                 Text="{x:Bind GameVM.Filter, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                 FontSize="18"
+                 Height="40"
+                 Margin="10"
+                 Padding="20,5,0,0"
+                 Grid.Column="2"
+                 Grid.Row="0"/>
+
+
         <ScrollViewer HorizontalScrollMode="Enabled" VerticalScrollMode="Disabled" HorizontalScrollBarVisibility="Visible" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="3">
             <ListView x:Name="LastNightsGames"
                       ItemsSource="{Binding Source={StaticResource GameCollection}}"
-                      ItemTemplate="{Binding Source={StaticResource GameTemplate}}">
+                      ItemTemplate="{Binding Source={StaticResource GameTemplate}}"
+                      SelectedItem="{x:Bind GameVM.SelectedNote, Mode=TwoWay}">
                 
             </ListView>
         </ScrollViewer>
