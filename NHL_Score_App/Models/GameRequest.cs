@@ -5,14 +5,18 @@ using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 
+
 namespace NHL_Score_App.Models
 {
     [Serializable]
-    public class PlayerModel
+    public class GameRequest
     {
-        [JsonProperty("player")]
-        public string Name { get; set; }
-        [JsonProperty("seasonTotal")]
-        public int seasonTotal { get; set; }
+        [JsonProperty("games")]
+        public GameModel[] Games { get; set; }
+
+        public GameRequest(GameModel[] games)
+        {
+            Games = games;
+        }
     }
 }
