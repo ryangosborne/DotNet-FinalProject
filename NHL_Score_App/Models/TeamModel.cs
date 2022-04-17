@@ -4,13 +4,17 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
 
 
 namespace NHL_Score_App.Models
 {
     public class TeamModel
     {
+        [JsonProperty("id")]
         public int Id { get; set; }
+
+        [JsonProperty("abbreviation")]
         public string Abbreviation { get; set; }
         public string Logo
         {
