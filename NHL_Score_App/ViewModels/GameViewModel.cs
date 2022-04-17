@@ -50,7 +50,7 @@ namespace NHL_Score_App.ViewModels
             // PerformFiltering();
         }
 
-        public GameModel SelectedNote
+        public GameModel SelectedGame
         {
             get { return _selectedGame; }
             set
