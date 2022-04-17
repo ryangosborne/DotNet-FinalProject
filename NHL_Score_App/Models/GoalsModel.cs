@@ -22,7 +22,7 @@ namespace NHL_Score_App.Models
         [JsonProperty("scorer")]
         public PlayerModel Scorer { get; set; }
         [JsonProperty("team")]
-        public TeamModel Team { get; set; }
+        //public TeamModel Team { get; set; }
 
         public string GoalAsString
         {

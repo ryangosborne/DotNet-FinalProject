@@ -10,9 +10,9 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Page.DataContext>
+    <!--<Page.DataContext>
         <viewmodels:GameViewModel/>
-    </Page.DataContext>
+    </Page.DataContext>-->
 
     <Page.Resources>
 
@@ -92,17 +92,15 @@
         <!-- GAME INFORMATION -->
         
         <!-- SCORES AND SHOTS -->
-        <StackPanel Grid.Row="2" Grid.Column="1" Margin="40, 80, 40, 130" Background="DarkGray" CornerRadius="100">
-            
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Spacing="50" Margin="40">
-                <TextBlock x:Name="visitor_score_text" Text="5" FontSize="32"></TextBlock>
-                <TextBlock x:Name="game_status_text" Text="Final" FontSize="32"></TextBlock>
-                <TextBlock x:Name="home_score_text" Text="2" FontSize="32"></TextBlock>
+        <StackPanel Grid.Row="2" Grid.Column="1" Margin="50, 50, 50, 170" Background="DarkGray" CornerRadius="100">
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Spacing="55" Margin="40">
+                <TextBlock x:Name="visitor_score_text" Text="5" FontSize="36"></TextBlock>
+                <TextBlock x:Name="game_status_text" Text="Final" FontSize="36"></TextBlock>
+                <TextBlock x:Name="home_score_text" Text="2" FontSize="36"></TextBlock>
             </StackPanel>
-
-            <Line X1="30" X2="400" Y1="1" Y2="1" Stroke="Black" StrokeThickness="2"></Line>
-
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Spacing="30" Margin="25">
+            
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Spacing="40">
                 <TextBlock x:Name="visitor_shots_text" Text="38" FontSize="30"></TextBlock>
                 <TextBlock Text="Shots" FontSize="30"></TextBlock>
                 <TextBlock x:Name="home_shots_text" Text="31" FontSize="30"></TextBlock>
@@ -111,8 +109,8 @@
         </StackPanel>
         
         <!-- VISITOR SIDE -->
-        <StackPanel x:Name="visitor_stack" Grid.Row="2" Grid.Column="0" Margin="30">
-            <Ellipse x:Name="visitor_logo" Height="230" Width="230" Fill="Yellow" Margin="0, 40, 0, 0"></Ellipse>
+        <StackPanel x:Name="visitor_stack" Grid.Row="2" Grid.Column="0" Margin="10">
+            <Ellipse x:Name="visitor_logo" Height="170" Width="170" Fill="Yellow" Margin="0, 30, 0, 0"></Ellipse>
             <!-- we can fill with team image -->
 
             <!--<ListView x:Name="visitor_goals"
@@ -125,8 +123,8 @@
         </StackPanel>
 
         <!-- HOME SIDE -->
-        <StackPanel x:Name="home_stack" Grid.Row="2" Grid.Column="2" Margin="30">
-            <Ellipse x:Name="home_logo" Height="230" Width="230" Fill="LightBlue" Margin="0, 40, 0, 0"></Ellipse>
+        <StackPanel x:Name="home_stack" Grid.Row="2" Grid.Column="2" Margin="10">
+            <Ellipse x:Name="home_logo" Height="170" Width="170" Fill="LightBlue" Margin="0, 30, 0, 0"></Ellipse>
             <!-- we can fill with team image -->
 
         </StackPanel>
