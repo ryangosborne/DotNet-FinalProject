@@ -2,10 +2,13 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+
 using NHL_Score_App.Models;
+
 
 namespace NHL_Score_App.ViewModels
 {
@@ -13,7 +16,7 @@ namespace NHL_Score_App.ViewModels
     {
         public ObservableCollection<GameModel> Games { get; set; }
 
-        private List<GameModel> _allGames = new List<GameModel>();
+        public GameModel[] _allGames;
 
         private GameModel _selectedGame;
 
@@ -21,12 +24,29 @@ namespace NHL_Score_App.ViewModels
 
         private string _filter;
 
-        // Game Object fields
 
+        // Game Object fields
+        public async void getGames()
+        {
+            _allGames =  await Repositories.GamesRepository.getGamesAsync();
+        }
         public GameViewModel ()
         {
             Games = new ObservableCollection<GameModel>();
 
+            try
+            {
+                getGames();
+
+                foreach(var game in _allGames)
+                {
+                    Console.WriteLine(game.startTime);
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.Message);
+            }
             // PerformFiltering();
         }
 
