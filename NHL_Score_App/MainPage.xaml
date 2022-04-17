@@ -84,7 +84,7 @@
             <ListView x:Name="LastNightsGames"
                       ItemsSource="{Binding Source={StaticResource GameCollection}}"
                       ItemTemplate="{Binding Source={StaticResource GameTemplate}}"
-                      SelectedItem="{x:Bind GameVM.SelectedNote, Mode=TwoWay}">
+                      SelectedItem="{x:Bind GameVM.SelectedGame, Mode=TwoWay}">
                 
             </ListView>
         </ScrollViewer>
