@@ -28,7 +28,14 @@ namespace NHL_Score_App.ViewModels
         // Game Object fields
         public async void getGames()
         {
-            _allGames =  await Repositories.GamesRepository.getGamesAsync();
+            // _allGames =  await Repositories.GamesRepository.getGamesAsync();
+
+            var games = Repositories.GamesRepository.getGamesFromAPI().GetAwaiter().GetResult();
+
+            foreach (var game in games)
+            {
+                Console.WriteLine(game);
+            }
         }
         public GameViewModel ()
         {
