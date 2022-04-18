@@ -13,6 +13,7 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using NHL_Score_App.ViewModels;
+using System.Diagnostics;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
@@ -43,6 +44,15 @@ namespace NHL_Score_App
         private void ExtraDetails_Click(object sender, RoutedEventArgs e)
         {
             Frame.Navigate(typeof(Details));
+        }
+
+        private void visitor_goal_scorers_Click(object sender, RoutedEventArgs e)
+        {
+            GameVM.DisplayVisitorStats();
+        }
+        private void home_goal_scorers_Click(object sender, RoutedEventArgs e)
+        {
+            GameVM.DisplayHomeStats();
         }
     }
 }

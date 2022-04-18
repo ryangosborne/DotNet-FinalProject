@@ -7,7 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using NHL_Score_App.Models;
-
+using NHL_Score_App.ContentDialogs;
+using Windows.UI.Xaml.Controls;
 
 namespace NHL_Score_App.ViewModels
 {
@@ -142,6 +143,28 @@ namespace NHL_Score_App.ViewModels
                     Games.Insert(i, resultItem);
                 }
             }*/
+        }
+
+        public async void DisplayVisitorStats()
+        {
+            VisitorStatsContentDialog visitorStats = new VisitorStatsContentDialog();
+            ContentDialogResult result = await visitorStats.ShowAsync();
+
+            if (result == ContentDialogResult.Primary)
+            {
+                Debug.WriteLine("Clicked the visitor button");
+            }
+        }
+
+        public async void DisplayHomeStats()
+        {
+            HomeStatsContentDialog homeStats = new HomeStatsContentDialog();
+            ContentDialogResult result = await homeStats.ShowAsync();
+
+            if (result == ContentDialogResult.Primary)
+            {
+                Debug.WriteLine("Clicked the home button");
+            }
         }
     }
 }
