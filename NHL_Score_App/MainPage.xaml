@@ -10,9 +10,9 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <!--<Page.DataContext>
+    <Page.DataContext>
         <viewmodels:GameViewModel/>
-    </Page.DataContext>-->
+    </Page.DataContext>
 
     <Page.Resources>
 
@@ -31,8 +31,16 @@
         </CollectionViewSource>
 
         <DataTemplate x:Name="GameTemplate" x:DataType="models:GameModel">
-            <StackPanel Orientation="Horizontal" Margin="5">
-                <TextBlock>test</TextBlock>
+            <StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="5">
+                    <TextBlock Text="VIS"></TextBlock>
+                    <TextBlock Text="5"></TextBlock>
+                </StackPanel>
+                <TextBlock Text="FINAL"></TextBlock>
+                <StackPanel Orientation="Horizontal" Margin="5">
+                    <TextBlock Text="HOM"></TextBlock>
+                    <TextBlock Text="2"></TextBlock>
+                </StackPanel>
             </StackPanel>
         </DataTemplate>
 
@@ -112,13 +120,6 @@
         <StackPanel x:Name="visitor_stack" Grid.Row="2" Grid.Column="0" Margin="10">
             <Ellipse x:Name="visitor_logo" Height="170" Width="170" Fill="Yellow" Margin="0, 30, 0, 0"></Ellipse>
             <!-- we can fill with team image -->
-
-            <!--<ListView x:Name="visitor_goals"
-                      ItemsSource="{Binding Source={StaticResource GameCollection}}"
-                      ItemTemplate="{Binding Source={StaticResource GameTemplate}}"
-                      SelectedItem="{x:Bind GameVM.SelectedNote, Mode=TwoWay}">
-
-            </ListView>-->
 
         </StackPanel>
 
