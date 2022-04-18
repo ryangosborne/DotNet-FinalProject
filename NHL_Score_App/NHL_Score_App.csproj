@@ -134,7 +134,6 @@
     <Compile Include="Models\GoalsModel.cs" />
     <Compile Include="Models\PlayerModel.cs" />
     <Compile Include="Models\ProgressModel.cs" />
-    <Compile Include="Models\ScoresModel.cs" />
     <Compile Include="Models\StatusModel.cs" />
     <Compile Include="Models\TeamModel.cs" />
     <Compile Include="Models\TeamsModel.cs" />

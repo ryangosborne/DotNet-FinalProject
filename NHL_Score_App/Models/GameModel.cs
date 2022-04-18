@@ -17,9 +17,6 @@ namespace NHL_Score_App.Models
         [JsonProperty("startTime")]
         public string startTime { get; set; }
 
-        [JsonProperty("scores")]
-        public ScoresModel Scores { get; set; }
-
         [JsonProperty("teams")]
         public TeamsModel Teams { get; set; }
 
