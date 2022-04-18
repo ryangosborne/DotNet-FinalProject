@@ -113,8 +113,8 @@
             </StackPanel>
             
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Spacing="40">
-                
-                <Button x:Name="goal_scorers_button" Click="goal_scorers_button_Click">Show Game Stats</Button>
+
+                <Button x:Name="goal_scorers_button" Click="goal_scorers_button_Click" CornerRadius="10">Show Goal Scorers</Button>
         
             </StackPanel>
 

@@ -20,11 +20,11 @@ namespace NHL_Score_App.ContentDialogs
 {
     public sealed partial class StatsContentDialog : ContentDialog
     {
-        public GameViewModel GameVM { get; set; }
+        public TextBlock GoalScorersTextBlock { get; set; }
         public StatsContentDialog()
         {
             this.InitializeComponent();
-            this.GameVM = new GameViewModel();
+            GoalScorersTextBlock = ScorerDetailsTextblock;
         }
 
         private void ContentDialog_PrimaryButtonClick(ContentDialog sender, ContentDialogButtonClickEventArgs args)
