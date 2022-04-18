@@ -33,13 +33,23 @@
         <DataTemplate x:Name="GameTemplate" x:DataType="models:GameModel">
             <StackPanel>
                 <StackPanel Orientation="Horizontal" Margin="5">
-                    <TextBlock Text="VIS"></TextBlock>
-                    <TextBlock Text="5"></TextBlock>
+                    <Ellipse>
+                        <Ellipse.Fill>
+                            <ImageBrush ImageSource="{x:Bind Teams.Away.Logo}"></ImageBrush>
+                        </Ellipse.Fill>
+                    </Ellipse>
+                    <TextBlock Text="{x:Bind Teams.Away.Abbreviation}"></TextBlock>
+                    <TextBlock Text="{x:Bind GoalsAwayTeam}"></TextBlock>
                 </StackPanel>
                 <TextBlock Text="FINAL"></TextBlock>
                 <StackPanel Orientation="Horizontal" Margin="5">
-                    <TextBlock Text="HOM"></TextBlock>
-                    <TextBlock Text="2"></TextBlock>
+                    <Ellipse>
+                        <Ellipse.Fill>
+                            <ImageBrush ImageSource="{x:Bind Teams.Home.Logo}"></ImageBrush>
+                        </Ellipse.Fill>
+                    </Ellipse>
+                    <TextBlock Text="{x:Bind Teams.Home.Abbreviation}"></TextBlock>
+                    <TextBlock Text="{x:Bind GoalsHomeTeam}"></TextBlock>
                 </StackPanel>
             </StackPanel>
         </DataTemplate>
