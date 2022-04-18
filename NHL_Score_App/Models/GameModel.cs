@@ -18,5 +18,23 @@ namespace NHL_Score_App.Models
         public TeamsModel Teams { get; set; }
         [JsonProperty("goals")]
         public GoalsModel[] Goals { get; set; }
+
+        public int GoalsAwayTeam { 
+            get
+            {
+                var awayAbbr = Teams.Away.Abbreviation;
+                var goals = Array.FindAll(Goals, goal => goal.Team == awayAbbr);
+                return goals.Length;
+            }
+        }
+        public int GoalsHomeTeam {
+            get
+            {
+                var homeAbbr = Teams.Home.Abbreviation;
+                var goals = Array.FindAll(Goals, goal => goal.Team == homeAbbr);
+                return goals.Length;
+            }
+        }
+
     }
 }
