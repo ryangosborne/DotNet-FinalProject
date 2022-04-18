@@ -1,5 +1,7 @@
 ﻿using System;
 using Newtonsoft.Json;
+using Windows.UI;
+using Windows.UI.Xaml.Media;
 
 namespace NHL_Score_App.Models
 {
@@ -33,6 +35,53 @@ namespace NHL_Score_App.Models
                 return goals.Length;
             }
         }
+        public Brush HomeBrush 
+        {
+            
+            get
+            {
+                var brush = new SolidColorBrush();
+                if (GoalsHomeTeam > GoalsAwayTeam)
+                {
+                    // home won
+                    brush.Color = Color.FromArgb(255, 0, 105, 35);
+                }
+                else if (GoalsHomeTeam < GoalsAwayTeam)
+                {
+                    // home lost
+                    brush.Color = Color.FromArgb(255, 158, 0, 13);
+                }
+                else
+                {
+                    // tie
+                    brush.Color = Color.FromArgb(255, 225, 242, 5);
+                }
+                return brush;
+            }
+        }
+        public Brush AwayBrush
+        {
+            get
+            {
+                var brush = new SolidColorBrush();
+                if (GoalsHomeTeam < GoalsAwayTeam)
+                {
+                    // away won
+                    brush.Color = Color.FromArgb(255, 0, 105, 35);
+                }
+                else if (GoalsHomeTeam > GoalsAwayTeam)
+                {
+                    // away lost
+                    brush.Color = Color.FromArgb(255, 158, 0, 13);
+                }
+                else
+                {
+                    // Tie
+                    brush.Color = Color.FromArgb(255, 225, 242, 5);
+                }
+                return brush;
 
+            }
+        }
     }
 }
