@@ -22,7 +22,7 @@ namespace NHL_Score_App.Repositories
 
         private static readonly string API_URL = "https://nhl-score-api.herokuapp.com/api/scores/latest";
 
-        public async static Task<GameModel[]> getGamesAsync()
+        public async static Task<DataModel> getGamesAsync()
         {
             using (HttpClient client = new HttpClient())
             {
@@ -30,7 +30,7 @@ namespace NHL_Score_App.Repositories
 
                 if(response.IsSuccessStatusCode)
                 {
-                    return JsonConvert.DeserializeObject<GameRequest>(await response.Content.ReadAsStringAsync()).Games;
+                    return JsonConvert.DeserializeObject<DataModel>(await response.Content.ReadAsStringAsync());
                 }
                 throw new Exception("Expected JSON response");
             }

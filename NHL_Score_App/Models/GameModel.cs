@@ -12,14 +12,11 @@ namespace NHL_Score_App.Models
     public class GameModel
     { 
         // All the fields we need to build out for the API
-        [JsonProperty("date.raw")]
-        public string Date { get; set; }
         [JsonProperty("startTime")]
         public string startTime { get; set; }
         [JsonProperty("teams")]
-        public ObservableCollection<TeamModel> Teams { get; set; }
+        public TeamsModel Teams { get; set; }
         [JsonProperty("goals")]
-        public ObservableCollection<GoalsModel> Goals { get; set; }
-        public bool overTime { get; set; }
+        public GoalsModel[] Goals { get; set; }
     }
 }
