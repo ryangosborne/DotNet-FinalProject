@@ -134,6 +134,7 @@
     <Compile Include="Models\GameRequest.cs" />
     <Compile Include="Models\GoalsModel.cs" />
     <Compile Include="Models\PlayerModel.cs" />
+    <Compile Include="Models\ScoresModel.cs" />
     <Compile Include="Models\TeamModel.cs" />
     <Compile Include="Models\TeamsModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
