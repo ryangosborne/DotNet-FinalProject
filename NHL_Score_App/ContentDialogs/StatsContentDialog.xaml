@@ -1,0 +1,57 @@
+﻿<ContentDialog
+    x:Class="NHL_Score_App.ContentDialogs.StatsContentDialog"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:NHL_Score_App.ContentDialogs"
+    xmlns:models="using:NHL_Score_App.Models"
+    xmlns:viewmodels="using:NHL_Score_App.ViewModels"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Title="Game Stats"
+    PrimaryButtonText="Close"
+    SecondaryButtonText=""
+    PrimaryButtonClick="ContentDialog_PrimaryButtonClick"
+    SecondaryButtonClick="ContentDialog_SecondaryButtonClick">
+
+    <ContentDialog.DataContext>
+        <viewmodels:GameViewModel/>
+    </ContentDialog.DataContext>
+    
+    <ContentDialog.Resources>
+        <CollectionViewSource x:Name="GameCollection"
+                              Source="{x:Bind GameVM.Games}">
+        </CollectionViewSource>
+
+        <DataTemplate x:Name="GameTemplate" x:DataType="models:GameModel">
+            <StackPanel Width="225" Background="LightGray">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Foreground="Black" FontSize="30" Text="{Binding Teams.Away.Abbreviation}"></TextBlock>
+                    <TextBlock Foreground="Black" Margin="50, 0, 0, 0" FontSize="30" Text="{Binding GoalsAwayTeam}"></TextBlock>
+                </StackPanel>
+                <TextBlock Foreground="Black" Margin="0,0,25,0" HorizontalAlignment="Right" FontSize="30" Text="{Binding Status.State}"></TextBlock>
+                <StackPanel Orientation="Horizontal" Margin="5">
+                    <TextBlock Foreground="Black" FontSize="30" Text="{Binding Teams.Home.Abbreviation}"></TextBlock>
+                    <TextBlock Foreground="Black" Margin="50, 0, 0, 0" FontSize="30" Text="{Binding GoalsHomeTeam}"></TextBlock>
+                </StackPanel>
+            </StackPanel>
+        </DataTemplate>
+    </ContentDialog.Resources>
+    
+    <Grid>
+        <ScrollViewer>
+            <ListView 
+                  Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="3" x:Name="LastNightsGames"
+                  
+                  ItemsSource="{Binding Source={StaticResource GameCollection}}"
+                  ItemTemplate="{Binding Source={StaticResource GameTemplate}}"
+                  SelectedItem="{x:Bind GameVM.SelectedGame, Mode=TwoWay}">
+                <ListView.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <StackPanel Background="Transparent" Orientation="Vertical" />
+                    </ItemsPanelTemplate>
+                </ListView.ItemsPanel>
+            </ListView>
+        </ScrollViewer>
+    </Grid>
+</ContentDialog>

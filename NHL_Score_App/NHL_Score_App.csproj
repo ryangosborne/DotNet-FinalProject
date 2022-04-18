@@ -122,11 +122,8 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ContentDialogs\HomeStatsContentDialog.xaml.cs">
-      <DependentUpon>HomeStatsContentDialog.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="ContentDialogs\VisitorStatsContentDialog.xaml.cs">
-      <DependentUpon>VisitorStatsContentDialog.xaml</DependentUpon>
+    <Compile Include="ContentDialogs\StatsContentDialog.xaml.cs">
+      <DependentUpon>StatsContentDialog.xaml</DependentUpon>
     </Compile>
     <Compile Include="Details.xaml.cs">
       <DependentUpon>Details.xaml</DependentUpon>
@@ -171,11 +168,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="ContentDialogs\HomeStatsContentDialog.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="ContentDialogs\VisitorStatsContentDialog.xaml">
+    <Page Include="ContentDialogs\StatsContentDialog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
