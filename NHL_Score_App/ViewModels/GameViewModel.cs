@@ -38,22 +38,15 @@ namespace NHL_Score_App.ViewModels
 
             foreach(GameModel game in _allGames.Games)
             {
-                Debug.WriteLine(game.Status.State);
+                
                 Debug.WriteLine(game.GoalsHomeTeam);
                 Debug.WriteLine(game.GoalsAwayTeam);
                 foreach (var goal in game.Goals)
                 {
-                    Debug.WriteLine(goal.GoalAsString);
                     Debug.WriteLine(goal.Team);
                 }
                 Games.Add(game);
             }
-            /*var games = Repositories.GamesRepository.getGamesFromAPI().GetAwaiter().GetResult();
-
-            foreach (var game in games)
-            {
-                Console.WriteLine(game);
-            }*/
         }
         public GameViewModel ()
         {

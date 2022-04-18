@@ -132,7 +132,6 @@
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Models\DataModel.cs" />
-    <Compile Include="Models\GameList.cs" />
     <Compile Include="Models\GameModel.cs" />
     <Compile Include="Models\GoalsModel.cs" />
     <Compile Include="Models\PlayerModel.cs" />

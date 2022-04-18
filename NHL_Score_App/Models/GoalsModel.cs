@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Collections.ObjectModel;
 using Newtonsoft.Json;
 
 namespace NHL_Score_App.Models
@@ -23,13 +18,5 @@ namespace NHL_Score_App.Models
         public PlayerModel Scorer { get; set; }
         [JsonProperty("team")]
         public string Team { get; set; }
-
-        public string GoalAsString
-        {
-            get
-            {
-                return "Period: " + Period + " " + Minutes + " : " + Seconds;
-            }
-        }
     }
 }
