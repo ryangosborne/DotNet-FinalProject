@@ -122,6 +122,12 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ContentDialogs\HomeStatsContentDialog.xaml.cs">
+      <DependentUpon>HomeStatsContentDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ContentDialogs\VisitorStatsContentDialog.xaml.cs">
+      <DependentUpon>VisitorStatsContentDialog.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Details.xaml.cs">
       <DependentUpon>Details.xaml</DependentUpon>
     </Compile>
@@ -134,7 +140,6 @@
     <Compile Include="Models\GoalsModel.cs" />
     <Compile Include="Models\PlayerModel.cs" />
     <Compile Include="Models\ProgressModel.cs" />
-    <Compile Include="Models\ScoresModel.cs" />
     <Compile Include="Models\StatusModel.cs" />
     <Compile Include="Models\TeamModel.cs" />
     <Compile Include="Models\TeamsModel.cs" />
@@ -166,6 +171,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="ContentDialogs\HomeStatsContentDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ContentDialogs\VisitorStatsContentDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Details.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -186,6 +199,7 @@
       <Version>13.0.1</Version>
     </PackageReference>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>
