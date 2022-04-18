@@ -15,7 +15,8 @@ namespace NHL_Score_App.ViewModels
     public class GameViewModel
     {
         public ObservableCollection<GameModel> Games { get; set; }
-
+        public StatsContentDialog StatsDialog { get; set; }
+        
         public ObservableCollection<GameModel> Stats { get; set; }
 
         public DataModel _allGames;
@@ -30,6 +31,8 @@ namespace NHL_Score_App.ViewModels
         public int HomeScore { get; set; }
         public string Status { get; set; }
 
+        public string ScorerString { get; set; }
+
 
         // Game Object fields
         public async void getGames()
@@ -38,19 +41,15 @@ namespace NHL_Score_App.ViewModels
 
             foreach(GameModel game in _allGames.Games)
             {
-                
-                Debug.WriteLine(game.GoalsHomeTeam);
-                Debug.WriteLine(game.GoalsAwayTeam);
-                foreach (var goal in game.Goals)
-                {
-                    Debug.WriteLine(goal.Team);
-                }
                 Games.Add(game);
             }
         }
         public GameViewModel ()
         {
             Games = new ObservableCollection<GameModel>();
+            Stats = new ObservableCollection<GameModel>();
+
+            StatsDialog = new StatsContentDialog();
 
             try
             {
@@ -60,7 +59,6 @@ namespace NHL_Score_App.ViewModels
             {
                 Debug.WriteLine(ex.Message);
             }
-            // PerformFiltering();
         }
 
         public GameModel SelectedGame
@@ -83,11 +81,20 @@ namespace NHL_Score_App.ViewModels
                     MainPage.VisitorScoreTextBlock.Text = AwayScore.ToString();
                     MainPage.StatusTextBlock.Text = Status;
                     MainPage.HomeScoreTextBlock.Text = HomeScore.ToString();
+
+                    string ScorerString = "";
+
+                    foreach(var goal in value.Goals)
+                    {
+                        ScorerString += goal.Team + ": " + goal.Scorer.Name + "(" + goal.Scorer.seasonTotal + ")" + "\n";
+                    }
+
                 }
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Status"));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("AwayScore"));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("HomeScore"));
-                
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("ScorerString"));
+
             }
         }
 
@@ -163,12 +170,31 @@ namespace NHL_Score_App.ViewModels
 
         public async void DisplayDialogStats()
         {
-            StatsContentDialog visitorStats = new StatsContentDialog();
-            ContentDialogResult result = await visitorStats.ShowAsync();
+
+            string ScorerString = "";
+
+            if (_selectedGame != null)
+            {
+                foreach (var goal in _selectedGame.Goals)
+                {
+                    ScorerString += goal.Team + ": " + goal.Scorer.Name + " (" + goal.Scorer.seasonTotal + ")" + "\n";
+                }
+
+                StatsDialog.GoalScorersTextBlock.Text = ScorerString;
+            }
+            else
+            {
+                StatsDialog.GoalScorersTextBlock.Text = "Please select a game.";
+            }
+
+            
+            ContentDialogResult result = await StatsDialog.ShowAsync();
 
             if (result == ContentDialogResult.Primary)
             {
-                Debug.WriteLine("Clicked the visitor button");
+
+                Debug.WriteLine(ScorerString);
+                
             }
         }
     }
