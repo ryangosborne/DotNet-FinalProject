@@ -36,7 +36,7 @@
                     <TextBlock Foreground="Black" FontSize="30" Text="{Binding Teams.Away.Abbreviation}"></TextBlock>
                     <TextBlock Foreground="Black" Margin="50, 0, 0, 0" FontSize="30" Text="{Binding GoalsAwayTeam}"></TextBlock>
                 </StackPanel>
-                <TextBlock Foreground="Black" Margin="0,0,25,0" HorizontalAlignment="Right" FontSize="30" Text="FINAL"></TextBlock>
+                <TextBlock Foreground="Black" Margin="0,0,25,0" HorizontalAlignment="Right" FontSize="30" Text="{Binding Status.State}"></TextBlock>
                 <StackPanel Orientation="Horizontal" Margin="5">
                     <TextBlock Foreground="Black" FontSize="30" Text="{Binding Teams.Home.Abbreviation}"></TextBlock>
                     <TextBlock Foreground="Black" Margin="50, 0, 0, 0" FontSize="30" Text="{Binding GoalsHomeTeam}"></TextBlock>
@@ -49,6 +49,7 @@
                 <TextBlock Foreground="Black"></TextBlock>
             </StackPanel>
         </DataTemplate>
+
     </Page.Resources>
 
     <Page.TopAppBar>
@@ -119,6 +120,12 @@
                 <TextBlock x:Name="home_shots_text" Text="31" FontSize="30"></TextBlock>
             </StackPanel>
 
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Spacing="55" Margin="40">
+                <TextBlock Text="{x:Bind GameVM.AwayScore, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" FontSize="36"></TextBlock>
+                <TextBlock Text="{x:Bind GameVM.Status, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" FontSize="36"></TextBlock>
+                <TextBlock  Text="{x:Bind GameVM.HomeScore, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" FontSize="36"></TextBlock>
+            </StackPanel>
+            
         </StackPanel>
         
         <!-- VISITOR SIDE -->

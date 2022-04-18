@@ -6,7 +6,6 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
 using NHL_Score_App.Models;
 
 
@@ -23,6 +22,10 @@ namespace NHL_Score_App.ViewModels
         public event PropertyChangedEventHandler PropertyChanged;
 
         private string _filter;
+
+        public int AwayScore { get; set; }   
+        public int HomeScore { get; set; }
+        public string Status { get; set; }
 
 
         // Game Object fields
@@ -77,9 +80,15 @@ namespace NHL_Score_App.ViewModels
                 }
                 else
                 {
-                   
+                    Status = value.Status.State;
+                    AwayScore = value.GoalsAwayTeam;
+                    HomeScore = value.GoalsHomeTeam;
+                    
                 }
-
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Status"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("AwayScore"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("HomeScore"));
+                
             }
         }
 
