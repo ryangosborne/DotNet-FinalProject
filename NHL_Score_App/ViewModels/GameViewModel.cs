@@ -32,6 +32,7 @@ namespace NHL_Score_App.ViewModels
 
             foreach(GameModel game in _allGames.Games)
             {
+                Debug.WriteLine(game.Status.State);
                 Debug.WriteLine(game.GoalsHomeTeam);
                 Debug.WriteLine(game.GoalsAwayTeam);
                 foreach (var goal in game.Goals)
