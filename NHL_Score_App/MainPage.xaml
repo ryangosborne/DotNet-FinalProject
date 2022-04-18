@@ -16,9 +16,7 @@
 
     <Page.Resources>
         <Style TargetType="Grid">
-            <Setter Property="Background" Value="#30302f"/>
-            <Setter Property="BorderBrush" Value="#494949" />
-            <Setter Property="BorderThickness" Value="4" />
+            <Setter Property="Background" Value="#3B6E9D"/>
         </Style>
         <Style TargetType="TextBlock">
             <Setter Property="FontSize" Value="24"/>
@@ -31,13 +29,13 @@
         </CollectionViewSource>
 
         <DataTemplate x:Name="GameTemplate" x:DataType="models:GameModel">
-            <StackPanel Width="225" Background="LightGray">
-                <StackPanel Orientation="Horizontal">
+            <StackPanel Width="225" Background="#c4c4c4">
+                <StackPanel Orientation="Horizontal" Margin="5" BorderBrush="{Binding AwayBrush}" BorderThickness="5">
                     <TextBlock Foreground="Black" FontSize="30" Text="{Binding Teams.Away.Abbreviation}"></TextBlock>
                     <TextBlock Foreground="Black" Margin="50, 0, 0, 0" FontSize="30" Text="{Binding GoalsAwayTeam}"></TextBlock>
                 </StackPanel>
                 <TextBlock Foreground="Black" Margin="0,0,25,0" HorizontalAlignment="Right" FontSize="30" Text="{Binding Status.State}"></TextBlock>
-                <StackPanel Orientation="Horizontal" Margin="5">
+                <StackPanel Orientation="Horizontal" Margin="5" BorderBrush="{Binding HomeBrush}" BorderThickness="5">
                     <TextBlock Foreground="Black" FontSize="30" Text="{Binding Teams.Home.Abbreviation}"></TextBlock>
                     <TextBlock Foreground="Black" Margin="50, 0, 0, 0" FontSize="30" Text="{Binding GoalsHomeTeam}"></TextBlock>
                 </StackPanel>
@@ -106,7 +104,7 @@
         <!-- GAME INFORMATION -->
         
         <!-- SCORES AND SHOTS -->
-        <StackPanel Grid.Row="2" Grid.Column="1" Margin="50, 50, 50, 170" Background="DarkGray" CornerRadius="100">
+        <StackPanel Grid.Row="2" Grid.Column="1" Margin="50, 50, 50, 170" Background="#C4C4C4" CornerRadius="100">
 
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Spacing="55" Margin="40">
                 <TextBlock x:Name="visitor_score_text" Text="-" FontSize="36"></TextBlock>
@@ -124,8 +122,9 @@
         
         <!-- VISITOR SIDE -->
         <StackPanel x:Name="visitor_stack" Grid.Row="2" Grid.Column="0" Margin="10">
-            <Ellipse x:Name="visitor_logo" Height="170" Width="170" Fill="Yellow" Margin="0, 30, 0, 0"></Ellipse>
-            <!-- we can fill with team image -->
+            <Image x:Name="visitor_logo_image" Height="170" Width="170" Margin="0, 30, 0, 0" 
+                   Source="{x:Bind GameVM.LogoPathAway, Mode=TwoWay}">
+            </Image>
 
         </StackPanel>
 

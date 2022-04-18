@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using NHL_Score_App.Models;
 using NHL_Score_App.ContentDialogs;
 using Windows.UI.Xaml.Controls;
+using Windows.UI.Xaml.Media.Imaging;
 
 namespace NHL_Score_App.ViewModels
 {
@@ -30,6 +31,7 @@ namespace NHL_Score_App.ViewModels
         public int AwayScore { get; set; }   
         public int HomeScore { get; set; }
         public string Status { get; set; }
+        public string LogoPathAway { get; set; }
 
         public string ScorerString { get; set; }
 
@@ -47,9 +49,6 @@ namespace NHL_Score_App.ViewModels
         public GameViewModel ()
         {
             Games = new ObservableCollection<GameModel>();
-            Stats = new ObservableCollection<GameModel>();
-
-            StatsDialog = new StatsContentDialog();
 
             try
             {
@@ -78,6 +77,13 @@ namespace NHL_Score_App.ViewModels
                     AwayScore = value.GoalsAwayTeam;
                     HomeScore = value.GoalsHomeTeam;
 
+                    // read in current file path of visitor
+                    Debug.WriteLine("current: " + LogoPathAway);
+
+                    // change it
+                    LogoPathAway = value.Teams.Away.Logo;
+                    Debug.WriteLine("now:" + LogoPathAway);
+
                     MainPage.VisitorScoreTextBlock.Text = AwayScore.ToString();
                     MainPage.StatusTextBlock.Text = Status;
                     MainPage.HomeScoreTextBlock.Text = HomeScore.ToString();
@@ -93,8 +99,6 @@ namespace NHL_Score_App.ViewModels
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Status"));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("AwayScore"));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("HomeScore"));
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("ScorerString"));
-
             }
         }
 
