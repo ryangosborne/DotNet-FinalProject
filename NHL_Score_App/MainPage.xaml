@@ -1,11 +1,12 @@
 ﻿<Page
     x:Class="NHL_Score_App.MainPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local="using:NHL_Score_App"
     xmlns:models="using:NHL_Score_App.Models"
     xmlns:viewmodels="using:NHL_Score_App.ViewModels"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
@@ -30,15 +31,25 @@
         </CollectionViewSource>
 
         <DataTemplate x:Name="GameTemplate" x:DataType="models:GameModel">
-            <StackPanel BorderThickness="1" BorderBrush="LightGray" Width="225">
+            <StackPanel>
                 <StackPanel Orientation="Horizontal" Margin="5">
-                    <TextBlock FontSize="30" Text="{Binding Teams.Away.Abbreviation}"></TextBlock>
-                    <TextBlock Margin="50, 0, 0, 0" FontSize="30" Text="{Binding GoalsAwayTeam}"></TextBlock>
+                    <Ellipse>
+                        <Ellipse.Fill>
+                            <ImageBrush ImageSource="{x:Bind Teams.Away.Logo}"></ImageBrush>
+                        </Ellipse.Fill>
+                    </Ellipse>
+                    <TextBlock Text="{x:Bind Teams.Away.Abbreviation}"></TextBlock>
+                    <TextBlock Text="{x:Bind GoalsAwayTeam}"></TextBlock>
                 </StackPanel>
-                <TextBlock Margin="0,0,25,0" HorizontalAlignment="Right" FontSize="30" Text="FINAL"></TextBlock>
+                <TextBlock Text="FINAL"></TextBlock>
                 <StackPanel Orientation="Horizontal" Margin="5">
-                    <TextBlock FontSize="30" Text="{Binding Teams.Home.Abbreviation}"></TextBlock>
-                    <TextBlock Margin="50, 0, 0, 0" FontSize="30" Text="{Binding GoalsHomeTeam}"></TextBlock>
+                    <Ellipse>
+                        <Ellipse.Fill>
+                            <ImageBrush ImageSource="{x:Bind Teams.Home.Logo}"></ImageBrush>
+                        </Ellipse.Fill>
+                    </Ellipse>
+                    <TextBlock Text="{x:Bind Teams.Home.Abbreviation}"></TextBlock>
+                    <TextBlock Text="{x:Bind GoalsHomeTeam}"></TextBlock>
                 </StackPanel>
             </StackPanel>
         </DataTemplate>
