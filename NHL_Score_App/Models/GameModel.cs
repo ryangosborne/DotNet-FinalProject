@@ -12,6 +12,8 @@ namespace NHL_Score_App.Models
     public class GameModel
     { 
         // All the fields we need to build out for the API
+        [JsonProperty("status")]
+        public StatusModel Status { get; set; }
         [JsonProperty("startTime")]
         public string startTime { get; set; }
 
