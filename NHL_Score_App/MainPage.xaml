@@ -122,8 +122,9 @@
         
         <!-- VISITOR SIDE -->
         <StackPanel x:Name="visitor_stack" Grid.Row="2" Grid.Column="0" Margin="10">
-            <Ellipse x:Name="visitor_logo" Height="170" Width="170" Fill="Yellow" Margin="0, 30, 0, 0"></Ellipse>
-            <!-- we can fill with team image -->
+            <Image x:Name="visitor_logo_image" Height="170" Width="170" Margin="0, 30, 0, 0" 
+                   Source="{x:Bind GameVM.LogoPathAway, Mode=TwoWay}">
+            </Image>
 
         </StackPanel>
 
