@@ -83,7 +83,10 @@ namespace NHL_Score_App.ViewModels
                     Status = value.Status.State;
                     AwayScore = value.GoalsAwayTeam;
                     HomeScore = value.GoalsHomeTeam;
-                    
+
+                    MainPage.VisitorScoreTextBlock.Text = AwayScore.ToString();
+                    MainPage.StatusTextBlock.Text = Status;
+                    MainPage.HomeScoreTextBlock.Text = HomeScore.ToString();
                 }
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Status"));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("AwayScore"));

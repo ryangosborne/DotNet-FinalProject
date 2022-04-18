@@ -109,9 +109,9 @@
         <StackPanel Grid.Row="2" Grid.Column="1" Margin="50, 50, 50, 170" Background="DarkGray" CornerRadius="100">
 
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Spacing="55" Margin="40">
-                <TextBlock x:Name="visitor_score_text" Text="5" FontSize="36"></TextBlock>
-                <TextBlock x:Name="game_status_text" Text="Final" FontSize="36"></TextBlock>
-                <TextBlock x:Name="home_score_text" Text="2" FontSize="36"></TextBlock>
+                <TextBlock x:Name="visitor_score_text" Text="-" FontSize="36"></TextBlock>
+                <TextBlock x:Name="game_status_text" Text="Status" FontSize="36"></TextBlock>
+                <TextBlock x:Name="home_score_text" Text="-" FontSize="36"></TextBlock>
             </StackPanel>
             
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Spacing="40">

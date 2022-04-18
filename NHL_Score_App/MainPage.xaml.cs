@@ -20,12 +20,19 @@ namespace NHL_Score_App
 {
     public sealed partial class MainPage : Page
     {
+        public static TextBlock VisitorScoreTextBlock { get; set; }
+        public static TextBlock StatusTextBlock { get; set; }
+        public static TextBlock HomeScoreTextBlock { get; set; }
         public GameViewModel GameVM { get; set; }
 
         public MainPage()
         {
             this.InitializeComponent();
             this.GameVM = new GameViewModel();
+
+            VisitorScoreTextBlock = visitor_score_text;
+            StatusTextBlock = game_status_text;
+            HomeScoreTextBlock = home_score_text;
         }
 
         private void AboutDetails_Click(object sender, RoutedEventArgs e)
