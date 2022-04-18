@@ -112,7 +112,7 @@ namespace NHL_Score_App.ViewModels
 
         private void PerformFiltering()
         {
-           /* if (_filter == null)
+            if (_filter == null)
             {
                 _filter = "";
             }
@@ -121,28 +121,49 @@ namespace NHL_Score_App.ViewModels
             var lowerCaseFilter = Filter.ToLowerInvariant().Trim();
 
             // Query all game titles that match filter text, as a list
-            var result = _allGames.Where(n => n.Title.ToLowerInvariant()
-                .Contains(lowerCaseFilter))
-                .ToList();
+            var resultAway = _allGames.Games.Where(n => n.Teams.Home.Abbreviation.ToLowerInvariant()
+                .Contains(lowerCaseFilter)).ToList();
+            var resultHome = _allGames.Games.Where(n => n.Teams.Away.Abbreviation.ToLowerInvariant()
+                .Contains(lowerCaseFilter)).ToList();
+
 
             //Get rid of the items that need to be filtered out
-            var toRemove = Games.Except(result).ToList();
+            var toRemoveAway = Games.Except(resultAway).ToList();
 
-            foreach (var x in toRemove)
+            foreach (var x in toRemoveAway)
+            {
+                Games.Remove(x);
+            }
+
+            //Get rid of the items that need to be filtered out
+            var toRemoveHome = Games.Except(resultHome).ToList();
+
+            foreach (var x in toRemoveHome)
             {
                 Games.Remove(x);
             }
 
             //Add the new results in the correct order
-            var resultCount = result.Count;
-            for (int i = 0; i < resultCount; i++)
+            var resultCountAway = resultAway.Count;
+            for (int i = 0; i < resultCountAway; i++)
             {
-                var resultItem = result[i];
+                var resultItem = resultAway[i];
                 if (i + 1 > Games.Count || !Games[i].Equals(resultItem))
                 {
                     Games.Insert(i, resultItem);
                 }
-            }*/
+            }
+
+            //Add the new results in the correct order
+            var resultCountHome = resultHome.Count;
+            for (int i = 0; i < resultCountHome; i++)
+            {
+                var resultItem = resultHome[i];
+                if (i + 1 > Games.Count || !Games[i].Equals(resultItem))
+                {
+                    Games.Insert(i, resultItem);
+                }
+            }
         }
 
         public async void DisplayVisitorStats()
