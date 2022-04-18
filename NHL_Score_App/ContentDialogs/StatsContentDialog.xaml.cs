@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NHL_Score_App.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -17,11 +18,13 @@ using Windows.UI.Xaml.Navigation;
 
 namespace NHL_Score_App.ContentDialogs
 {
-    public sealed partial class VisitorStatsContentDialog : ContentDialog
+    public sealed partial class StatsContentDialog : ContentDialog
     {
-        public VisitorStatsContentDialog()
+        public GameViewModel GameVM { get; set; }
+        public StatsContentDialog()
         {
             this.InitializeComponent();
+            this.GameVM = new GameViewModel();
         }
 
         private void ContentDialog_PrimaryButtonClick(ContentDialog sender, ContentDialogButtonClickEventArgs args)

@@ -46,13 +46,9 @@ namespace NHL_Score_App
             Frame.Navigate(typeof(Details));
         }
 
-        private void visitor_goal_scorers_Click(object sender, RoutedEventArgs e)
+        private void goal_scorers_button_Click(object sender, RoutedEventArgs e)
         {
-            GameVM.DisplayVisitorStats();
-        }
-        private void home_goal_scorers_Click(object sender, RoutedEventArgs e)
-        {
-            GameVM.DisplayHomeStats();
+            GameVM.DisplayDialogStats();
         }
     }
 }

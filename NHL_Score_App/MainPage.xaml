@@ -115,21 +115,11 @@
             </StackPanel>
             
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Spacing="40">
-                <!--<TextBlock x:Name="visitor_goal_scorers" Text="Details" FontSize="30"></TextBlock>-->
-                <Button x:Name="visitor_goal_scorers" Click="visitor_goal_scorers_Click">Details</Button>
                 
-                <TextBlock Text="Stats" FontSize="30"></TextBlock>
-                
-                <!--<TextBlock x:Name="home_shots_text" Text="31" FontSize="30"></TextBlock>-->
-                <Button x:Name="home_goal_scorers" Click="home_goal_scorers_Click">Details</Button>
+                <Button x:Name="goal_scorers_button" Click="goal_scorers_button_Click">Show Game Stats</Button>
+        
             </StackPanel>
 
-            <!--<StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Spacing="55" Margin="40">
-                <TextBlock Text="{x:Bind GameVM.AwayScore, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" FontSize="36"></TextBlock>
-                <TextBlock Text="{x:Bind GameVM.Status, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" FontSize="36"></TextBlock>
-                <TextBlock  Text="{x:Bind GameVM.HomeScore, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" FontSize="36"></TextBlock>
-            </StackPanel>-->
-            
         </StackPanel>
         
         <!-- VISITOR SIDE -->

@@ -16,6 +16,8 @@ namespace NHL_Score_App.ViewModels
     {
         public ObservableCollection<GameModel> Games { get; set; }
 
+        public ObservableCollection<GameModel> Stats { get; set; }
+
         public DataModel _allGames;
 
         private GameModel _selectedGame;
@@ -159,25 +161,14 @@ namespace NHL_Score_App.ViewModels
             }
         }
 
-        public async void DisplayVisitorStats()
+        public async void DisplayDialogStats()
         {
-            VisitorStatsContentDialog visitorStats = new VisitorStatsContentDialog();
+            StatsContentDialog visitorStats = new StatsContentDialog();
             ContentDialogResult result = await visitorStats.ShowAsync();
 
             if (result == ContentDialogResult.Primary)
             {
                 Debug.WriteLine("Clicked the visitor button");
-            }
-        }
-
-        public async void DisplayHomeStats()
-        {
-            HomeStatsContentDialog homeStats = new HomeStatsContentDialog();
-            ContentDialogResult result = await homeStats.ShowAsync();
-
-            if (result == ContentDialogResult.Primary)
-            {
-                Debug.WriteLine("Clicked the home button");
             }
         }
     }
