@@ -9,7 +9,7 @@ using Newtonsoft.Json;
 
 namespace NHL_Score_App.Models
 {
-    public class TeamModel
+    public partial class TeamModel
     {
         [JsonProperty("id")]
         public int Id { get; set; }

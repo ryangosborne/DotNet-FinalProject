@@ -9,7 +9,7 @@ using Newtonsoft.Json;
 namespace NHL_Score_App.Models
 {
     [Serializable]
-    public class GoalsModel
+    public partial class GoalsModel
     {
         [JsonProperty("period")]
         public string Period { get; set; }
@@ -18,11 +18,11 @@ namespace NHL_Score_App.Models
         [JsonProperty("sec")]
         public int Seconds { get; set; }
         [JsonProperty("assists")]
-        public ObservableCollection<PlayerModel> Assists { get; set; }
+        public PlayerModel[] Assists { get; set; }
         [JsonProperty("scorer")]
         public PlayerModel Scorer { get; set; }
         [JsonProperty("team")]
-        //public TeamModel Team { get; set; }
+        public string Team { get; set; }
 
         public string GoalAsString
         {

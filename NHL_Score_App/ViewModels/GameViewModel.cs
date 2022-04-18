@@ -16,7 +16,7 @@ namespace NHL_Score_App.ViewModels
     {
         public ObservableCollection<GameModel> Games { get; set; }
 
-        public GameModel[] _allGames;
+        public DataModel _allGames;
 
         private GameModel _selectedGame;
 
@@ -28,14 +28,18 @@ namespace NHL_Score_App.ViewModels
         // Game Object fields
         public async void getGames()
         {
-            // _allGames =  await Repositories.GamesRepository.getGamesAsync();
+            _allGames =  await Repositories.GamesRepository.getGamesAsync();
 
-            var games = Repositories.GamesRepository.getGamesFromAPI().GetAwaiter().GetResult();
+            foreach(GameModel game in _allGames.Games)
+            {
+                Debug.WriteLine(game.startTime);
+            }
+            /*var games = Repositories.GamesRepository.getGamesFromAPI().GetAwaiter().GetResult();
 
             foreach (var game in games)
             {
                 Console.WriteLine(game);
-            }
+            }*/
         }
         public GameViewModel ()
         {
@@ -44,11 +48,6 @@ namespace NHL_Score_App.ViewModels
             try
             {
                 getGames();
-
-                foreach(var game in _allGames)
-                {
-                    Console.WriteLine(game.startTime);
-                }
             }
             catch (Exception ex)
             {
