@@ -78,13 +78,6 @@ namespace NHL_Score_App.ViewModels
                     AwayScore = value.GoalsAwayTeam;
                     HomeScore = value.GoalsHomeTeam;
 
-                    // read in current file path of visitor
-                    //Debug.WriteLine("current: " + LogoPathAway);
-
-                    //// change it
-                    //LogoPathAway = value.Teams.Away.Logo;
-                    //Debug.WriteLine("now:" + LogoPathAway);
-
                     MainPage.VisitorScoreTextBlock.Text = AwayScore.ToString();
                     MainPage.StatusTextBlock.Text = Status;
                     MainPage.HomeScoreTextBlock.Text = HomeScore.ToString();
