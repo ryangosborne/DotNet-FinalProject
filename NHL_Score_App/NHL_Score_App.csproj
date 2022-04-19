@@ -150,6 +150,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\nhl_formatted.png" />
+    <Content Include="Assets\spash_custom.png" />
+    <Content Include="Assets\SplashScreen.scale-100.png" />
+    <Content Include="Assets\SplashScreen.scale-125.png" />
+    <Content Include="Assets\SplashScreen.scale-150.png" />
+    <Content Include="Assets\SplashScreen.scale-400.png" />
     <Content Include="Assets\team_logos\formatted\avalanche.png" />
     <Content Include="Assets\team_logos\formatted\blackhawks.png" />
     <Content Include="Assets\team_logos\formatted\bluejackets.png" />
