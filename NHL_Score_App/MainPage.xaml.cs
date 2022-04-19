@@ -24,6 +24,8 @@ namespace NHL_Score_App
         public static TextBlock VisitorScoreTextBlock { get; set; }
         public static TextBlock StatusTextBlock { get; set; }
         public static TextBlock HomeScoreTextBlock { get; set; }
+
+        public static Image VisitorLogoImage { get; set; }
         public GameViewModel GameVM { get; set; }
 
         public MainPage()
@@ -34,6 +36,8 @@ namespace NHL_Score_App
             VisitorScoreTextBlock = visitor_score_text;
             StatusTextBlock = game_status_text;
             HomeScoreTextBlock = home_score_text;
+
+            VisitorLogoImage = visitor_logo_image;
         }
 
         private void AboutDetails_Click(object sender, RoutedEventArgs e)
