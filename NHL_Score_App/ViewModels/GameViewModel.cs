@@ -49,6 +49,7 @@ namespace NHL_Score_App.ViewModels
         public GameViewModel ()
         {
             Games = new ObservableCollection<GameModel>();
+            StatsDialog = new StatsContentDialog();
 
             try
             {
@@ -78,11 +79,11 @@ namespace NHL_Score_App.ViewModels
                     HomeScore = value.GoalsHomeTeam;
 
                     // read in current file path of visitor
-                    Debug.WriteLine("current: " + LogoPathAway);
+                    //Debug.WriteLine("current: " + LogoPathAway);
 
-                    // change it
-                    LogoPathAway = value.Teams.Away.Logo;
-                    Debug.WriteLine("now:" + LogoPathAway);
+                    //// change it
+                    //LogoPathAway = value.Teams.Away.Logo;
+                    //Debug.WriteLine("now:" + LogoPathAway);
 
                     MainPage.VisitorScoreTextBlock.Text = AwayScore.ToString();
                     MainPage.StatusTextBlock.Text = Status;

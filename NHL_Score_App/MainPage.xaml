@@ -121,12 +121,12 @@
         </StackPanel>
         
         <!-- VISITOR SIDE -->
-        <StackPanel x:Name="visitor_stack" Grid.Row="2" Grid.Column="0" Margin="10">
+        <!--<StackPanel x:Name="visitor_stack" Grid.Row="2" Grid.Column="0" Margin="10">
             <Image x:Name="visitor_logo_image" Height="170" Width="170" Margin="0, 30, 0, 0" 
                    Source="{x:Bind GameVM.LogoPathAway, Mode=TwoWay}">
             </Image>
 
-        </StackPanel>
+        </StackPanel>-->
 
         <!-- HOME SIDE -->
         <StackPanel x:Name="home_stack" Grid.Row="2" Grid.Column="2" Margin="10">
