@@ -78,6 +78,8 @@ namespace NHL_Score_App.ViewModels
                     AwayScore = value.GoalsAwayTeam;
                     HomeScore = value.GoalsHomeTeam;
 
+                    // LogoPathAway = "Assets/team_logos/formatted/blues.png";
+
                     // read in current file path of visitor
                     //Debug.WriteLine("current: " + LogoPathAway);
 
@@ -96,10 +98,13 @@ namespace NHL_Score_App.ViewModels
                         ScorerString += goal.Team + ": " + goal.Scorer.Name + "(" + goal.Scorer.seasonTotal + ")" + "\n";
                     }
 
+                    // MainPage.VisitorLogoImage.Source = new BitmapImage(new Uri("Assets/team_logos/formatted/jets.png", UriKind.RelativeOrAbsolute));
+
                 }
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Status"));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("AwayScore"));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("HomeScore"));
+                // PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("LogoPathAway"));
             }
         }
 
